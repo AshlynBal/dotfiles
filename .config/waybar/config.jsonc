@@ -1,8 +1,20 @@
 {
     "height": 33, // Waybar height (to be removed for auto height)
     "spacing": 8, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "network", "battery", "clock"],
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "wlr/taskbar",
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "battery",
+        "clock",
+        "custom/notifications"
+    ],
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -16,10 +28,33 @@
         // "icon-size": 21,
         "spacing": 10
     },
+    /* === Modules Left === */
+
+    /* === Modules Center === */
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "all-outputs": false,
+        "active-first": true,
+        "tooltip-format": "{name}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            "rofi"
+        ]
+    },
+
+    /* === Modules Right === */
+
     "clock": {
         "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%I:%M %p}"
+    },
+    "custom/notifications": {
+        "format": "󰂚",
+        "on-click": "swaync-client -t -sw"
+        // 󱅫
     },
     "cpu": {
         "format": "{usage}% ",
@@ -64,7 +99,15 @@
         "format-ethernet": "{ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "tooltip-format": "Bluetooth: {status}",
+        "tooltip-format-connected": "Connected to {device_alias}",
+        "on-click": "blueman-manager",
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -82,6 +125,6 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
+    }
 }
 
