@@ -8,12 +8,13 @@
         "wlr/taskbar",
     ],
     "modules-right": [
+        "tray",
         "pulseaudio",
         "network",
         "bluetooth",
         "battery",
         "clock",
-        "custom/notifications"
+        "custom/notification"
     ],
     "keyboard-state": {
         "numlock": true,
@@ -25,7 +26,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        //"icon-size": 21,
         "spacing": 10
     },
     /* === Modules Left === */
@@ -35,7 +36,7 @@
     "wlr/taskbar": {
         "format": "{icon}",
         "all-outputs": false,
-        "active-first": true,
+        "active-first": false,
         "tooltip-format": "{name}",
         "on-click": "activate",
         "on-click-middle": "close",
@@ -49,11 +50,13 @@
     "clock": {
         "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%I:%M %p}"
+        "format": "{:%a %b %d   %R}"
+//        "format": "{:%a %b %d %I:%M %p}"
     },
-    "custom/notifications": {
+    "custom/notification": {
         "format": "󰂚",
-        "on-click": "swaync-client -t -sw"
+        "on-click": "swaync-client -t -sw",
+        "tooltip": "false",
         // 󱅫
     },
     "cpu": {
@@ -77,21 +80,14 @@
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon} ",
-        "format-charging": "{capacity}% 󰂄",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
+        "format": "{icon} {capacity}%",
+        //"format-charging": "󰂄",
+        "format-charging": "{icon}󱐋 {capacity}%",
+        "format-plugged": "",
+        //"format-alt": "{icon} {capacity}%",
+        "format-icons": ["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+        "tooltip": true,
+        "tooltip-format": "{capacity}% - {timeTo}"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -100,6 +96,7 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         // "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "on-click": "~/.config/waybar/scripts/rofi-wifi-menu.sh"
     },
     "bluetooth": {
         "format": "󰂯",
