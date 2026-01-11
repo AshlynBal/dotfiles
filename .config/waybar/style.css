@@ -12,11 +12,10 @@
 
 #waybar {
     background-color: rgba(83, 35, 38, 0);
-/*     color: #d3c6aa; */
     transition-property: background-color;
     transition-duration: .5s;
     border-radius: 50px;
-    color: #0d593e;
+    color: #dcf2de;
     background: transparent;
     padding: 0;          /* important */
     border: none;        /* important */
@@ -75,7 +74,7 @@
     padding: 0 4px;
     margin-top: 3px;
     margin-bottom: 3px;
-    color: #ffffff;
+/*     color: #ffffff; */
     border-radius: 1px;
 }
 
@@ -117,7 +116,7 @@
 #workspaces button {
     padding: 0 6px;
     background-color: transparent;
-    color: #d3c6aa;
+    color: #dcf2de;
 }
 
 #workspaces button:hover {
@@ -125,7 +124,7 @@
 }
 
 #workspaces button.active {
-    color: #a7c080;
+/*     color: #a7c080; */
     background-color: #232a2e;
 /*     transform: scale(1.15); */
 }

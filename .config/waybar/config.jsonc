@@ -6,11 +6,13 @@
     ],
     "modules-center": [
         "wlr/taskbar",
+        "custom/power"
     ],
     "modules-right": [
         "tray",
         "pulseaudio",
-        "network",
+      //  "network",
+        "custom/network",
         "bluetooth",
         "battery",
         "clock",
@@ -43,6 +45,19 @@
         "ignore-list": [
             "rofi"
         ]
+    },
+
+    "custom/power": {
+    "format" : "⏻ ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/menus/power_menu.xml",
+    "menu-actions": {
+        "shutdown": "shutdown",
+        "reboot": "reboot",
+        "suspend": "systemctl suspend",
+        "hibernate": "systemctl hibernate",
+        },
     },
 
     /* === Modules Right === */
@@ -90,13 +105,30 @@
         "tooltip-format": "{capacity}% - {timeTo}"
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%)  ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        // "format-alt": "{ifname}: {ipaddr}/{cidr}"
         "on-click": "~/.config/waybar/scripts/rofi-wifi-menu.sh"
+    },
+    "custom/network": {
+        "exec": "~/.config/waybar/scripts/wifi-location.sh",
+        "return-type": "json",
+        "interval": 5,
+
+// Display
+        "format": "{}",
+        "tooltip": true,
+
+// NM GUI editor
+        "on-click": "nm-connection-editor",
+
+// Right-Click: open TUI with kitty
+        "on-click-right": "kitty -e nmtui",
+
+// Scroll toggles Wi-Fi radio
+        "on-scroll-up": "nmcli radio wifi on",
+        "on-scroll-down": "nmcli radio wifi off"
     },
     "bluetooth": {
         "format": "󰂯",
