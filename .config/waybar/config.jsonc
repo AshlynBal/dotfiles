@@ -5,14 +5,14 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "wlr/taskbar",
-        "custom/power"
+        "wlr/taskbar"
+        // "custom/power"
     ],
     "modules-right": [
         "tray",
         "pulseaudio",
-      //  "network",
-        "custom/network",
+        "network",
+        //"custom/network",
         "bluetooth",
         "battery",
         "clock",
@@ -109,26 +109,35 @@
         "format-ethernet": "{ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "~/.config/waybar/scripts/rofi-wifi-menu.sh"
+//        "on-click": "~/.config/waybar/scripts/rofi-wifi-menu.sh"
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/menus/wifi_menu.xml",
+        "menu-actions": {
+            "disconnect": "nmcli device disconnect wlan0",
+            "avalible-networks": "~/.config/waybar/scripts/rofi-wifi-menu.sh",
+            "edit-connections": "nm-connection-editor",
+            //"nmtui": "kitty -e nmtui"
+            "nmtui": "hyprctl dispatch exec \"[float on] kitty -e nmtui\""
+        }
     },
     "custom/network": {
         "exec": "~/.config/waybar/scripts/wifi-location.sh",
         "return-type": "json",
         "interval": 5,
-
-// Display
         "format": "{}",
         "tooltip": true,
-
-// NM GUI editor
-        "on-click": "nm-connection-editor",
-
-// Right-Click: open TUI with kitty
-        "on-click-right": "kitty -e nmtui",
-
-// Scroll toggles Wi-Fi radio
-        "on-scroll-up": "nmcli radio wifi on",
-        "on-scroll-down": "nmcli radio wifi off"
+        // "on-click": "nm-connection-editor",
+        // "on-click-right": "kitty -e nmtui",
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/menus/wifi_menu.xml",
+        "menu-actions": {
+            "disconnect": "nmcli device disconnect wlan0",
+            "avalible-networks": "~/.config/waybar/scripts/rofi-wifi-menu.sh",
+            "edit-connections": "nm-connection-editor",
+            "nmtui": "kitty -e nmtui"
+        }
+//        "on-scroll-up": "nmcli radio wifi on",
+//        "on-scroll-down": "nmcli radio wifi off"
     },
     "bluetooth": {
         "format": "󰂯",

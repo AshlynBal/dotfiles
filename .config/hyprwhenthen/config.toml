@@ -1,0 +1,14 @@
+[general]
+timeout = "1s"
+
+# Float Google login window automatically
+[[handler]]
+on = "windowtitlev2"
+when = "(.*),Sign In - Google Account"
+then = "hyprctl dispatch togglefloating address:0x${REGEX_GROUP_1}"
+
+# Switch to workspace when specific app opens
+[[handler]]
+on = "openwindow"
+when = "firefox"
+then = "hyprctl dispatch workspace 2"

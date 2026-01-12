@@ -2,27 +2,24 @@
 <interface>
   <object class="GtkMenu" id="menu">
     <child>
-		<object class="GtkMenuItem" id="suspend">
-			<property name="label">Suspend</property>
-        </object>
-	</child>
-	<child>
-        <object class="GtkMenuItem" id="hibernate">
-			<property name="label">Hibernate</property>
+		<object class="GtkMenuItem" id="disconnect">
+			<property name="label">Disconnect</property>
         </object>
 	</child>
     <child>
-        <object class="GtkMenuItem" id="shutdown">
-			<property name="label">Shutdown</property>
-        </object>
+      <object class="GtkMenuItem" id="avalible-networks">
+        <property name="label">Avalible Networks</property>
+      </object>
     </child>
     <child>
-      <object class="GtkSeparatorMenuItem" id="delimiter1"/>
+      <object class="GtkMenuItem" id="edit-connections">
+        <property name="label">Edit Connections</property>
+      </object>
     </child>
     <child>
-		<object class="GtkMenuItem" id="reboot">
-			<property name="label">Reboot</property>
-		</object>
+      <object class="GtkMenuItem" id="nmtui">
+        <property name="label">NetworkManager TUI</property>
+      </object>
     </child>
   </object>
 </interface>
