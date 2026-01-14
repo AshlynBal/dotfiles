@@ -2,9 +2,9 @@
 <interface>
   <object class="GtkMenu" id="menu">
     <child>
-		<object class="GtkMenuItem" id="disconnect">
-			<property name="label">Disconnect</property>
-        </object>
+      <object class="GtkMenuItem" id="disconnect">
+        <property name="label">Disconnect</property>
+      </object>
 	</child>
     <child>
       <object class="GtkMenuItem" id="avalible-networks">

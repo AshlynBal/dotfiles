@@ -105,40 +105,40 @@
         "tooltip-format": "{capacity}% - {timeTo}"
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%)  ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
+        "format-wifi": "{icon}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) {icon} ",
+        "format-ethernet": "{icon}󰈁",
+        "tooltip-format-ethernet": "{ipaddr}/{cidr} {icon}󰈁",
         "format-disconnected": "Disconnected ⚠",
-//        "on-click": "~/.config/waybar/scripts/rofi-wifi-menu.sh"
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
         "menu": "on-click",
         "menu-file": "~/.config/waybar/menus/wifi_menu.xml",
         "menu-actions": {
             "disconnect": "nmcli device disconnect wlan0",
             "avalible-networks": "~/.config/waybar/scripts/rofi-wifi-menu.sh",
-            "edit-connections": "nm-connection-editor",
-            //"nmtui": "kitty -e nmtui"
+            "edit-connections": "hyprctl dispatch exec \"[float on] nm-connection-editor\"",
             "nmtui": "hyprctl dispatch exec \"[float on] kitty -e nmtui\""
         }
     },
-    "custom/network": {
-        "exec": "~/.config/waybar/scripts/wifi-location.sh",
-        "return-type": "json",
-        "interval": 5,
-        "format": "{}",
-        "tooltip": true,
-        // "on-click": "nm-connection-editor",
-        // "on-click-right": "kitty -e nmtui",
-        "menu": "on-click",
-        "menu-file": "~/.config/waybar/menus/wifi_menu.xml",
-        "menu-actions": {
-            "disconnect": "nmcli device disconnect wlan0",
-            "avalible-networks": "~/.config/waybar/scripts/rofi-wifi-menu.sh",
-            "edit-connections": "nm-connection-editor",
-            "nmtui": "kitty -e nmtui"
-        }
+//    "custom/network": {
+//        "exec": "~/.config/waybar/scripts/wifi-location.sh",
+//        "return-type": "json",
+//        "interval": 5,
+//        "format": "{}",
+//        "tooltip": true,
+//        // "on-click": "nm-connection-editor",
+//        // "on-click-right": "kitty -e nmtui",
+//        "menu": "on-click",
+//        "menu-file": "~/.config/waybar/menus/wifi_menu.xml",
+//        "menu-actions": {
+//            "disconnect": "nmcli device disconnect wlan0",
+//            "avalible-networks": "~/.config/waybar/scripts/rofi-wifi-menu.sh",
+//            "edit-connections": "nm-connection-editor",
+//            "nmtui": "kitty -e nmtui"
+//        }
 //        "on-scroll-up": "nmcli radio wifi on",
 //        "on-scroll-down": "nmcli radio wifi off"
-    },
+//    },
     "bluetooth": {
         "format": "󰂯",
         "format-disabled": "󰂲",
