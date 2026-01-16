@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <object class="GtkMenu" id="menu">
+
+    <child>
+      <object class="GtkMenuItem">
+        <property name="label">Test</property>
+        <child type="submenu">
+          <object class="GtkMenu" id="menu2">
+                <child>
+                  <object class="GtkMenuItem" id="testingMenuItem">
+                    <property name="label">blahblahblah</property>
+                  </object>
+                </child>
+          </object>
+        </child>
+      </object>
+    </child>
+
     <child>
       <object class="GtkMenuItem" id="disconnect">
         <property name="label">Disconnect</property>
