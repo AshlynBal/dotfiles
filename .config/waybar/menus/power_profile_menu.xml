@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+
+    <child>
+      <object class="GtkMenuItem">
+        <property name="label">Power Profile</property>
+        <child type="submenu">
+          <object class="GtkMenu" id="power_profile_menu">
+                <child>
+                  <object class="GtkMenuItem" id="performance">
+                    <property name="label">Performance</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkMenuItem" id="balanced">
+                    <property name="label">Balanced</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkMenuItem" id="power-saver">
+                    <property name="label">Power Saver</property>
+                  </object>
+                </child>
+          </object>
+        </child>
+      </object>
+    </child>
+
+<!--    <child>
+      <object class="GtkMenuItem" id="disconnect">
+        <property name="label">Disconnect</property>
+      </object>
+	</child>
+    <child>
+      <object class="GtkMenuItem" id="avalible-networks">
+        <property name="label">Avalible Networks</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="edit-connections">
+        <property name="label">Edit Connections</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="nmtui">
+        <property name="label">NetworkManager TUI</property>
+      </object>
+    </child>-->
+  </object>
+</interface>

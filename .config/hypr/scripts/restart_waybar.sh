@@ -1,1 +1,1 @@
-pkill waybar && sleep 0.1 && waybar & disown
+pkill waybar && sleep 0.1; waybar & disown

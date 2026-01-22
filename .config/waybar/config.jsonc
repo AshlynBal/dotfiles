@@ -11,10 +11,12 @@
     "modules-right": [
         "tray",
         "pulseaudio",
+        "custom/music",
         "network",
         //"custom/network",
         "bluetooth",
-        "battery",
+        "custom/battery",
+        //"battery",
         "clock",
         "custom/notification"
     ],
@@ -32,6 +34,7 @@
         "spacing": 10
     },
     /* === Modules Left === */
+
 
     /* === Modules Center === */
 
@@ -61,6 +64,15 @@
     },
 
     /* === Modules Right === */
+
+    // waybar-module-music
+    "custom/music": {
+        "format": "{}",
+        "tooltip": true,
+        "tooltip-format": "{}",
+        "return-type": "json",
+        "exec": "waybar-module-music --format \"🎵 %artist% | %title%\" --marquee --title-width 25"
+    },
 
     "clock": {
         "timezone": "America/New_York",
@@ -93,6 +105,16 @@
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "custom/battery": {
+        "exec": "~/.config/waybar/scripts/battery_state.sh",
+        "return-type": "json",
+        "interval": 10,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/menus/power_profile_menu.xml",
+        "menu-actions": {
+            //"performance":
+        }
     },
     "battery": {
         "format": "{icon} {capacity}%",
