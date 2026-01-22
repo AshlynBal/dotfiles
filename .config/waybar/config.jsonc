@@ -35,6 +35,15 @@
     },
     /* === Modules Left === */
 
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "gaming": "󰮂 ",
+            "discord": " ",
+            "obsidian": "󰠮"
+        }
+    },
+
 
     /* === Modules Center === */
 
@@ -113,7 +122,9 @@
         "menu": "on-click",
         "menu-file": "~/.config/waybar/menus/power_profile_menu.xml",
         "menu-actions": {
-            //"performance":
+            "performance": "powerprofilesctl set performance",
+            "balanced": "powerprofilesctl set balanced",
+            "power-saver": "powerprofilesctl set power-saver"
         }
     },
     "battery": {
