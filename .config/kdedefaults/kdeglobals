@@ -1,0 +1,13 @@
+[General]
+ColorScheme=BreezeDark
+
+[Icons]
+Theme=breeze
+
+[KDE]
+widgetStyle=Breeze
+
+[General]
+TerminalApplication=kitty
+
+TerminalService=kitty

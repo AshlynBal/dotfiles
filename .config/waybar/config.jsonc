@@ -179,6 +179,7 @@
         "format-connected": "󰂱",
         "tooltip-format": "Bluetooth: {status}",
         "tooltip-format-connected": "Connected to {device_alias}",
+        "tooltip-format-connected-battery": "Connected to {device_alias} ({device_battery_percentage}%)",
         "on-click": "blueman-manager",
     },
     "pulseaudio": {
