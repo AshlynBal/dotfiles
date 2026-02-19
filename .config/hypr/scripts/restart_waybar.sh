@@ -1,1 +1,2 @@
-pkill waybar && sleep 0.1; waybar & disown
+#!/bin/bash
+pkill waybar; waybar & disown

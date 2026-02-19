@@ -29,10 +29,6 @@
             "unlocked": ""
         }
     },
-    "tray": {
-        //"icon-size": 21,
-        "spacing": 10
-    },
     /* === Modules Left === */
 
     "hyprland/workspaces": {
@@ -74,6 +70,10 @@
 
     /* === Modules Right === */
 
+    "tray": {
+        //"icon-size": 21,
+        "spacing": 10
+    },
     // waybar-module-music
     "custom/music": {
         "format": "{}",
@@ -184,9 +184,9 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% ",
-        "format-bluetooth-muted": "󰝟 ",
+        "format": "{volume}%",
+        "format-bluetooth": "{volume}%",
+        "format-bluetooth-muted": "󰝟 ",
         "format-muted": "󰝟",
         "format-icons": {
             "headphone": "",

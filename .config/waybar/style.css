@@ -26,7 +26,6 @@
 .modules-left,
 .modules-right {
 /*     background: rgba(4,102,116,0.60); */
-    background: linear-gradient(135deg, rgba(43,255,136,0.40), rgba(43,210,255,0.30), rgba(250, 139, 255, 0.20));
     border: 2px solid transparent;      /* keeps your “window border align” */
     border-radius: 14px;                /* adjust for roundness */
     padding: 2px 8px;                   /* internal spacing */
@@ -34,10 +33,23 @@
     box-shadow: 0 8px 24px -12px rgba(26,26,26,0.93);
 }
 
+.modules-left {
+    background: linear-gradient(-90deg, rgba(43,255,136,0.40), rgba(43,210,255,0.30), rgba(250, 139, 255, 0.20));
+}
+
+.modules-right {
+    background: linear-gradient(90deg, rgba(43,255,136,0.40), rgba(43,210,255,0.30), rgba(250, 139, 255, 0.20));
+}
+
 .modules-center {
     padding: 2px 8px;                   /* internal spacing */
     margin: 2px 6px;                    /* the “gap” between segments */
-    box-shadow: 0 8px 24px -12px rgba(26,26,26,0.93);
+/*     background: rgba(0,0,0,01); */
+    border-radius: 14px;
+    border-color: rgba(51,204,255,0.55);
+
+    border: 2px solid transparent;
+/*     box-shadow: 0 8px 24px -12px rgba(26,26,26,0.93); */
 }
 
 #waybar.hidden {
@@ -103,11 +115,8 @@
 
 #taskbar button.active {
     background: linear-gradient(45deg, rgba(51,204,255,0.10), rgba(0,255,153,0.40));
-/*     background: linear-gradient(135deg, rgba(43,255,136,0.40), rgba(43,210,255,0.30), rgba(250, 139, 255, 0.20)); */
     border-color: rgba(51,204,255,0.55);
-/*     border-color: rgba(0,255,153,0.40); */
 /*     color: #00ff99; */
-/*     padding: 2px 12px; */
 }
 #taskbar button.active image {
     -gtk-icon-transform: scale(1.25);

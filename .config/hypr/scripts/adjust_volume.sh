@@ -9,7 +9,7 @@ beep() {
 }
 
 set_volume() {
-    wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ $1
+    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ $1
 }
 
 if [ -z $1 ]; then
