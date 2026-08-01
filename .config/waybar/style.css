@@ -165,6 +165,15 @@
 /*** Other ***/
 /*************/
 
+#custom-kawkaw {
+    background-image: url('/home/ashlyn/Icons/Kawkaw_battle_spared.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
 /* waybar-module-music */
 /*#custom-music {
   padding: 0 10px;

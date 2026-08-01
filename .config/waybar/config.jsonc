@@ -5,6 +5,7 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
+        "custom/kawkaw",
         "wlr/taskbar"
         // "custom/power"
     ],
@@ -66,6 +67,14 @@
         "suspend": "systemctl suspend",
         "hibernate": "systemctl hibernate",
         },
+    },
+
+
+
+    "custom/kawkaw": {
+        "format": "    ",
+        "tooltip": false,
+        "on-click": "exec ~/.config/waybar/scripts/kawkaw/Ueueleuleuleue.sh"
     },
 
     /* === Modules Right === */
