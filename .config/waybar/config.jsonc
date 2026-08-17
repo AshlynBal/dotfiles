@@ -18,6 +18,7 @@
         "bluetooth",
         "custom/battery",
         //"battery",
+        "hyprland/language",
         "clock",
         "custom/notification"
     ],
@@ -92,6 +93,11 @@
         "exec": "waybar-module-music --format \"🎵 %artist% | %title%\" --marquee --title-width 25"
     },
 
+    "hyprland/language": {
+        "format": "{shortDescription}"
+//        "format": "{variant}"
+        },
+
     "clock": {
         "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -160,7 +166,8 @@
             "disconnect": "nmcli device disconnect wlan0",
             "avalible-networks": "~/.config/waybar/scripts/rofi-wifi-menu.sh",
             "edit-connections": "hyprctl dispatch exec \"[float on] nm-connection-editor\"",
-            "nmtui": "hyprctl dispatch exec \"[float on] kitty -e nmtui\""
+            "nmtui": "hyprctl dispatch exec \"[float on] kitty -e nmtui\"",
+            "randomize-ip": "~/.config/waybar/scripts/change_mac.sh"
         }
     },
 //    "custom/network": {

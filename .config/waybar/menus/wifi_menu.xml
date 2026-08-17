@@ -4,12 +4,12 @@
 
     <child>
       <object class="GtkMenuItem">
-        <property name="label">Test</property>
+        <property name="label">More</property>
         <child type="submenu">
           <object class="GtkMenu" id="menu2">
                 <child>
-                  <object class="GtkMenuItem" id="testingMenuItem">
-                    <property name="label">blahblahblah</property>
+                  <object class="GtkMenuItem" id="randomize-ip">
+                    <property name="label">Randomize IP</property>
                   </object>
                 </child>
           </object>
