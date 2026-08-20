@@ -1,2 +1,1 @@
-cd .config/
-stow -t ~/.config/ .
+stow -d ".config/" -t "$HOME/.config/" .
